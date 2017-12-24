@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello Angular JS</title>
+<script  src="Js/lib/angular.js" type="text/javascript"></script>
+<script  src="Js/myJs/angularExample2.js" type="text/javascript"></script>
+</head>
+<body ng-app="gitApiModule" ng-controller="mainController">
+	<div>{{Error}}</div>
+	
+	{{name}}
+	
+	<form ng-submit="search(searchInfo)">
+		 <input type="search" style="width:240px" 
+		 		required placeholder="{{required}}" name="name" ng-model="searchInfo" />
+		 <input type="submit" value="save" />
+	</form>
+	
+	<br />
+        <label ng-show="answer.name">Name: {{answer.name}}</label>
+    <br />
+        <label ng-show="answer.blog"> Blog: {{answer.blog}}</label>
+    <br />
+
+		<div ng-show="answer.avatar_url">
+            <img ng-src="{{answer.avatar_url}}" title="{{answer.name}}" />
+        </div>
+</body>
+</html>

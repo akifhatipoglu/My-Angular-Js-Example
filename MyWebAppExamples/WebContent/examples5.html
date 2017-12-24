@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hello Angular JS</title>
+<script  src="Js/lib/angular.js" type="text/javascript"></script>
+<script  src="Js/myJs/angularExample5.js" type="text/javascript"></script>
+<style>
+input#patterninput-ng-untouched{
+	background-color: aqua;
+}
+input#patterninput.ng-invalid {
+    background-color:pink;
+}
+input#patterninput.ng-valid {
+    background-color:lightgreen;
+}
+</style>
+</head>
+<body ng-app="gitApiModule" ng-controller="mainController">
+	<div>{{Error}}</div>
+	
+	{{name}}
+	
+	
+	<form name="form">
+    	<label for="regexInput">Set a pattern (regex string): </label>
+    	<input type="text" ng-model="regex" id="regexInput" />
+    <br>
+    	<label for="patterninput">This input is restricted by the current pattern: </label>
+    	<input type="text" ng-model="model" id="patterninput" name="patterninput" 
+    	ng-pattern="regex" 
+    	required/>
+    	
+    <br>
+    <hr>
+    	input valid? = <code>{{form.patterninput.$valid}}</code>
+    	<br>
+    	<span ng-show="form.patterninput.$error.pattern" style="color:red">Please enter correct email address.</span>
+    	<br>
+    	model = <code>{{model}}</code>
+    	<br>
+    	<code>form.patterninput.$valid = {{form.patterninput.$valid}}</code><br>
+ 		<code>form.patterninput.$error = {{form.patterninput.$error}}</code><br>
+  		<code>form.$valid = {{form.$valid}}</code><br>
+  		<code>form.$error.required = {{!!form.$error.required}}</code><br>
+    	
+  	</form>
+	
+	<br>
+	<br>
+	<hr>
+</body>
+</html>
